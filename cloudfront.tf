@@ -1,8 +1,8 @@
 
 # Origin Access Control resource
 resource "aws_cloudfront_origin_access_control" "web" {
-  name                              = "static app 2 OAC"
-  description                       = "static app 2 OAC policy"
+  name                              = "static app OAC"
+  description                       = "static app OAC policy"
   origin_access_control_origin_type = "s3"
   signing_behavior                  = "always"
   signing_protocol                  = "sigv4"
@@ -10,8 +10,8 @@ resource "aws_cloudfront_origin_access_control" "web" {
 
 # Default cache policy for Cloudfront
 resource "aws_cloudfront_cache_policy" "web" {
-  name        = "staticapp2-cache-policy"
-  comment     = "staticapp2-cache-policy"
+  name        = "staticapp-cache-policy"
+  comment     = "staticapp-cache-policy"
   default_ttl = 50
   max_ttl     = 100
   min_ttl     = 1
