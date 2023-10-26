@@ -37,3 +37,20 @@ variable "acm_arn" {
   default = ""
   
 }
+variable "cloudfront_custom_error_responses" {
+  type = list(any)
+  default = [
+    {
+      error_code            = 403
+      response_code         = 200
+      error_caching_min_ttl = 10
+      response_page_path    = "/index.html"
+    },
+    {
+      error_code            = 404
+      response_code         = 200
+      error_caching_min_ttl = 10
+      response_page_path    = "/index.html"
+    }
+  ]
+}
